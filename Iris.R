@@ -1,3 +1,6 @@
+# File : Iris.R
+# Author : Sharanya Palavalli
+# Date : 06/08/2017
 
 # Read in `iris` data set
 irisDS <- read.csv(url("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"),
@@ -16,7 +19,7 @@ library(usdm)
 library(dplyr)
 library(gridExtra)
 
-# analyze relationships between variables
+# Analyze relationships between variables
 ggpairs(irisDS, aes(colour=Species), title="Iris Variable Relationships") +
   # change colors
   theme(plot.title = element_text(size=30, face='bold'))
@@ -101,7 +104,7 @@ ggplot(data=datasetLDA, aes(x=lda.x.LD1, y=lda.x.LD2, colour=Species)) +
         axis.title.x = element_text(size=16, face='bold'),
         axis.title.y = element_text(size=16, face='bold'))
 
-#Using Random Forest to predict the flower class
+# Using Random Forest to predict the flower class
 
 library(randomForest)
 # develop model
@@ -176,3 +179,5 @@ table(predictedLabels)
 
 # Confusion matrix
 confusionMatrix(predictedLabels,testIris[,5])
+
+###########  End of File ###############
